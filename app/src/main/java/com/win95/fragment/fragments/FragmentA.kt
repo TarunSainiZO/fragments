@@ -3,10 +3,12 @@ package com.win95.fragment.fragments
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
+import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.win95.fragment.Communicator
 import com.win95.fragment.R
 
@@ -23,6 +25,10 @@ class FragmentA : Fragment() {
         val message = view.findViewById<EditText>(R.id.message)
         button.setOnClickListener {
             communicator.passData(message.text.toString())
+            val view = getActivity()?.findViewById<BottomNavigationView>(R.id.nevigationMenu)
+//            if(view!=null){
+//                view.selectedItemId(getActivity()?.findViewById<View>(R.id.setting))
+//            }
         }
         return view
     }
